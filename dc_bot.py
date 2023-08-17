@@ -25,6 +25,7 @@ class DiscordClient():
                     print(f"An error occurred for {member.display_name}: {e}")
 
             await message.channel.send('Nicknames reset!')
+
     
     def run(self):
         self.client.run(self.token)
