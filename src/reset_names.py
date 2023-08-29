@@ -4,8 +4,6 @@ import discord
 
 load_dotenv()
 
-# https://realpython.com/how-to-make-a-discord-bot-python/ 
-
 intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
@@ -34,7 +32,7 @@ async def on_message(message):
                 print(f"An error occurred for user '{member.display_name}'.\n{e}")
         combined_message = 'Nicknames resetting...'
 
-        for i in range(0, 3):
+        for i in range(0, 25):
             combined_message += '\nBefore (Nickname)/After (Default) Placeholder Here'
             
         await message.channel.send(combined_message, silent=True)
@@ -42,7 +40,9 @@ async def on_message(message):
 client.run(token)
 
 # ideas/notes
-# bot perms dont change admin nickname..?
 # show before and after of name change later
-# if there are 100+ members in a guild, send before and after name change 1 by 1
 # use @silent so that it doesnt spam members
+
+# limitations
+# if there are 50+ members in a guild, it has char cap of 2000, 
+# bot perms dont change admin nickname
