@@ -32,10 +32,12 @@ async def on_message(message):
                 await member.edit(nick=None)
             except Exception as e:
                 print(f"An error occurred for user '{member.display_name}'.\n{e}")
-        await message.channel.send('Resetting nicknames!')
-        await message.channel.send('Before/After Placeholder Here', silent=True)
-        await message.channel.send('Before/After Placeholder Here', silent=True)
-        await message.channel.send('Before/After Placeholder Here', silent=True)
+        combined_message = 'Nicknames resetting...'
+
+        for i in range(0, 3):
+            combined_message += '\nBefore (Nickname)/After (Default) Placeholder Here'
+            
+        await message.channel.send(combined_message, silent=True)
 
 client.run(token)
 
