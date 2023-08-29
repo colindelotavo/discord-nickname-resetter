@@ -38,6 +38,6 @@ You can install the necessary libraries via pip:
 If you encounter any issues, please open an issue in the repository or contact the maintainer.
 
 ## Useful Links
-https://realpython.com/how-to-make-a-discord-bot-python/
-https://discordpy.readthedocs.io/en/stable/api.html
+- [Python Discord Bot Example](https://realpython.com/how-to-make-a-discord-bot-python/)
+- [Discord API Documentation](https://discordpy.readthedocs.io/en/stable/api.html)
 
