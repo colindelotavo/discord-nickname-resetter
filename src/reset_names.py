@@ -29,7 +29,6 @@ async def on_message(message):
                 print(member.display_name)
                 # Reset nickname to default
                 await member.edit(nick=None)
-                print(member.display_name)
             except Exception as e:
                 print(f"An error occurred for user '{member.display_name}'.\n{e}")
         await message.channel.send('Nicknames reset!')
