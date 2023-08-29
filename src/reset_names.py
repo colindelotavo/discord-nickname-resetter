@@ -4,47 +4,38 @@ import discord
 
 load_dotenv()
 
-class DiscordClient():
-    def __init__(self):
-        intents = discord.Intents.default()
-        intents.message_content = True
-        intents.guilds = True
-        self.client = discord.Client(intents=intents)
-        self.token = os.getenv("BOT_TOKEN")
+# https://realpython.com/how-to-make-a-discord-bot-python/ 
 
-    # @event
-    async def on_ready(self):
-        print("TEST0")
-        print(f'Logged in as {self.client.user}')
-    
-    # @event
-    async def on_message(self, message):
-         # Check if the message is from the bot itself to avoid infinite loop
-        if message.author == self.client.user:
-            print("TEST1")
-            return
+intents = discord.Intents.default()
+intents.message_content = True
+intents.guilds = True
+intents.members = True
+client = discord.Client(intents=intents)
+token = os.getenv("BOT_TOKEN")
 
-        if message.content.startswith('!reset'):
-            # Fetch all members of the server
-            print("TEST2")
-            for member in message.guild.members:
-                try:
-                    # Reset nickname to default
-                    await member.edit(nick=None)
-                except Exception as e:
-                    print(f"An error occurred for {member.display_name}: {e}")
+@client.event
+async def on_ready():
+    print(f'Logged in as {client.user.name}')
 
-            await message.channel.send('Nicknames reset!')
+@client.event
+async def on_message(message):
+    # Avoids infinite loop
+    if message.author == client.user:
+        return
 
-    def reset_names(self):
-        pass
+    if message.content.startswith('!reset'):
+        for member in message.guild.members:
+            try:
+                print(member.display_name)
+                # Reset nickname to default
+                await member.edit(nick=None)
+                print(member.display_name)
+            except Exception as e:
+                print(f"An error occurred for user '{member.display_name}'.\n{e}")
+        await message.channel.send('Nicknames reset!')
 
-    def run(self):
-        self.client.run(self.token)
+client.run(token)
 
-def main():
-    discord_bot = DiscordClient()
-    discord_bot.run()
-
-if __name__ == "__main__":
-    main()
+# ideas/notes
+# bot perms dont change admin nickname..?
+# show before and after of name change later
