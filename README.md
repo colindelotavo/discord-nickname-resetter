@@ -1,11 +1,10 @@
 # Discord Bot: Nickname Resetter
-
-## Overview
-
-This is a simple Discord bot written in Python that listens for a `!reset` command. When this command is issued in any channel, the bot will reset the nicknames of all members in that guild (server) to their default names. 
+There weren't (m)any Discord bots out there that could mass reset usernames for my server. So, I took the initiative and wrote this quick script to get the job done. Hope it helps! This is a simple Discord bot written in Python that listens for a `!reset` command. When this command is issued in a public channel, the bot will reset the nicknames of all members in that guild (server) to their default names. 
 
 You can install the necessary libraries via pip:
-`pip install discord.py python-dotenv`
+```bash
+pip install discord.py python-dotenv
+```
 
 
 ## Setup
@@ -13,9 +12,9 @@ You can install the necessary libraries via pip:
 1. Clone this repository or download the script.
 2. Set up a `.env` file in the root directory, replacing `YourDiscordBotTokenHere` with your actual bot token from the [Discord Developer Portal](https://discord.com/developers/applications). OAuth2 > General > Generate Client Secret.
 3. Run the script:
-`python3 src/reset_names.py`
-
-
+```bash
+python3 src/reset_names.py
+```
 
 ## How it Works
 
@@ -25,10 +24,13 @@ You can install the necessary libraries via pip:
 
 - It will then send a combined message indicating the nickname reset process. The message includes placeholders for showing the "Before (Nickname)" and "After (Default)" which will be implemented later.
 
-## Limitations
+## Current Limitations
 
 1. Discord's message character limit is 2000. If there are more than 50 members in a guild, the return message of the bot can cause an error trying to go over the limit.
-2. The bot's permissions don't allow it to change the nicknames of admins or users with higher roles than the bot itself.
+2. The bot's permissions don't allow it to change the nicknames of admins or users with higher roles than the bot itself. 
+```bash
+(403 Forbidden (error code: 50013): Missing Permissions)
+```
 
 ## TODO
 - Show a before-and-after of the name change.
@@ -39,5 +41,5 @@ If you encounter any issues, please open an issue in the repository or contact t
 
 ## Useful Links
 - [Python Discord Bot Example](https://realpython.com/how-to-make-a-discord-bot-python/)
-- [Discord API Documentation](https://discordpy.readthedocs.io/en/stable/api.html)
+- [Discord.Py API Documentation](https://discordpy.readthedocs.io/en/stable/api.html)
 
