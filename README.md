@@ -27,7 +27,7 @@ python3 src/reset_names.py
 ## Current Limitations
 
 1. Discord's message character limit is 2000. If there are more than 50 members in a guild, the return message of the bot can cause an error trying to go over the limit.
-2. The bot's permissions don't allow it to change the nicknames the server owner.
+2. The bot's permissions don't allow it to reset the server owner's nickname.
 ```bash
 (403 Forbidden (error code: 50013): Missing Permissions)
 ```
