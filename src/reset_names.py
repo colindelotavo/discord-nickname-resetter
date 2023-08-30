@@ -23,26 +23,17 @@ async def on_message(message):
 
     # if message.content.startswith('!reset'):
     if message.content == '!reset':
+        if message.guild.owner.nick != None:
+            print(f"Note: Server owner `{message.guild.owner.nick}` will remain unaffected.")
         for member in message.guild.members:
-            try:
-                # print(member.display_name)
-                # Reset nickname to default
-                await member.edit(nick=None)
-            except Exception as e:
-                print(f"An error occurred for user '{member.display_name}'.\n{e}")
-        combined_message = 'Nicknames resetting...'
-
-        for i in range(0, 25):
-            combined_message += '\nBefore (Nickname)/After (Default) Placeholder Here'
-            
-        await message.channel.send(combined_message, silent=True)
+            if member.nick != None and member != message.guild.owner:
+                try:
+                    print(f"{member.nick} -> {member.global_name}")
+                    await member.edit(nick=None)
+                except Exception as e:
+                    print(f"An error occurred for user '{member.display_name}'.\n{e}")
+        
+        # print(message.guild.members)
+        # await message.channel.send("Nicknames converting to display names...", silent=True)
 
 client.run(token)
-
-# ideas/notes
-# show before and after of name change later
-# use @silent so that it doesnt spam members
-
-# limitations
-# if there are 50+ members in a guild, it has char cap of 2000, 
-# bot perms dont change admin nickname

@@ -33,8 +33,17 @@ python3 src/reset_names.py
 ```
 
 ## TODO
-- Show a before-and-after of the name change.
-- Implement the `@silent` attribute to ensure members are not spammed by notifications.
+- State if all names are already reset
+- Make as a script
+
+## TODOs Addressed
+- Implement the `@silent` attribute to ensure members are not spammed by notifications: Not sending a message in the server chat, instead opting for printing in the console.
+- Show a before-and-after of the name change: Shows before and after of name change in console. Format:
+```bash
+nickname -> display_name
+```
+- Add catch for server owner: Checks if server owner has nickname and states that it is unable to change it.
+
 
 ## Support
 If you encounter any issues, please open an issue in the repository or contact the maintainer.
