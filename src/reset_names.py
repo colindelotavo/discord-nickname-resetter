@@ -39,7 +39,4 @@ async def on_message(message):
         elif names_changed == 0:
             await message.channel.send("Names are already reset.", silent=True)
 
-        # print(message.guild.members)
-        # await message.channel.send("Nicknames converting to display names...", silent=True)
-
 client.run(token)
