@@ -33,7 +33,6 @@ python3 src/reset_names.py
 ```
 
 ## TODO
-- State if all names are already reset
 - Make as a script
 
 ## TODOs Addressed
@@ -43,6 +42,7 @@ python3 src/reset_names.py
 nickname -> display_name
 ```
 - Add catch for server owner: Checks if server owner has nickname and states that it is unable to change it.
+- States if all names are already reset: Also adds a note if server owner has a nickname that cannot be changed for visibility.
 
 
 ## Support
