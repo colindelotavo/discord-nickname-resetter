@@ -8,19 +8,21 @@ pip install discord.py python-dotenv
 
 
 ## Setup
-1. Clone this repository or download the script.
-2. Set up a `.env` file in the root directory, replacing `YourDiscordBotTokenHere` with your actual bot token from the [Discord Developer Portal](https://discord.com/developers/applications). OAuth2 > General > Generate Client Secret.
-3. Run the script:
+1. Download the repository onto your computer.
+2. Create a file named .env in the main folder of the project.
+3. Copy and paste this code inside the .env file.
+```
+BOT_TOKEN = "<api_token>"
+```
+4. Replace `<api_token>` with your bot token from the [Discord Developer Portal](https://discord.com/developers/applications). OAuth2 > General > Generate Client Secret.
+5. Run the script:
 ```bash
 python3 src/reset_names.py
 ```
 
 ## How it Works
-
 - The bot requires certain intents to function correctly: message content, guilds, and members. These are set to make sure the bot can read messages and interact with members in a guild.
-
 - Once the bot detects the `!reset` command, it will loop through all members in the guild and reset their nicknames to the default. 
-
 - It will then send a combined message indicating the nickname reset process. The message includes placeholders for showing the "Before (Nickname)" and "After (Default)" which will be implemented later.
 
 ## TODO
@@ -51,7 +53,7 @@ Unfortunately, this error cannot be resolved due to API limitations. My suggesti
 
 
 ## Support
-If you encounter any issues, please open an issue in the repository or contact the maintainer.
+If you encounter any issues or if there is any way to make the steps to using the script easier to understand, please open an issue in the repository or contact me.
 
 ## Useful Links
 - [Python Discord Bot Example](https://realpython.com/how-to-make-a-discord-bot-python/)
