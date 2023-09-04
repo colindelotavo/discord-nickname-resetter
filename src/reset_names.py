@@ -23,8 +23,6 @@ async def on_message(message):
         return
 
     if message.content == '!reset':
-        if message.guild.owner.nick != None:
-            print(f"Note: Server owner `{message.guild.owner.nick}` will remain unaffected")
         for member in message.guild.members:
             if member.nick != None and member != message.guild.owner:
                 try:
@@ -35,6 +33,7 @@ async def on_message(message):
                     print(f"An error occurred for user '{member.display_name}'.\n{e}")
         
         if names_changed == 0 and message.guild.owner.nick != None:
+            print(f"Note: Server owner `{message.guild.owner.nick}` will remain unaffected. See README.md for more info.")
             await message.channel.send(f"Names are already reset, `{message.guild.owner.nick}` will remain unaffected", silent=True)
         elif names_changed == 0:
             await message.channel.send("Names are already reset", silent=True)
