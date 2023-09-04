@@ -6,7 +6,6 @@ You can install the necessary libraries via pip:
 pip install discord.py python-dotenv
 ```
 
-
 ## Setup
 1. Download the repository onto your computer.
 2. Create a file named .env in the main folder of the project.
@@ -24,18 +23,6 @@ python3 src/reset_names.py
 - The bot requires certain intents to function correctly: message content, guilds, and members. These are set to make sure the bot can read messages and interact with members in a guild.
 - Once the bot detects the `!reset` command, it will loop through all members in the guild and reset their nicknames to the default. 
 - It will then send a combined message indicating the nickname reset process. The message includes placeholders for showing the "Before (Nickname)" and "After (Default)" which will be implemented later.
-
-## TODO
-- Make as a script
-
-## TODOs Addressed
-- Implement the `@silent` attribute to ensure members are not spammed by notifications: Not sending a message in the server chat, instead opting for printing in the console.
-- Show a before-and-after of the name change: Shows before and after of name change in console. Format:
-```
-nickname -> display_name
-```
-- Add catch for server owner: Checks if server owner has nickname and states that it is unable to change it.
-- States if all names are already reset: Also adds a note if server owner has a nickname that cannot be changed for visibility.
 
 ## Troubleshooting
 ### TypeError: expected token to be a str, received NoneType instead
