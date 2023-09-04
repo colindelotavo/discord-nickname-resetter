@@ -8,8 +8,8 @@ pip install discord.py python-dotenv
 
 ## Setup
 1. Download the repository onto your computer.
-2. Create a file named .env in the main folder of the project.
-3. Copy and paste this code inside the .env file.
+2. Create a file named `.env` in the main folder of the project.
+3. Copy and paste the code below into the `.env` file.
 ```
 BOT_TOKEN = "<api_token>"
 ```
@@ -26,9 +26,9 @@ python3 src/reset_names.py
 
 ## Troubleshooting
 ### TypeError: expected token to be a str, received NoneType instead
-When trying to run the `reset_names.py` script, you may encounter an error indicating an "TypeError: expected token to be a str, received NoneType instead". This happens due to a missing API token.
+When trying to run the `reset_names.py` script, you may encounter an error indicating an "TypeError: expected token to be a str, received NoneType instead". This can happen due to a missing API token or missing `.env` file.
 #### Resolution
-Ensure that you have provided the API token to `BOT_TOKEN="<api_token>"` in the .env file.
+Ensure that you have a `.env` file in the `reset-name-discord-bot` folder, and that you have provided the API token to `BOT_TOKEN="<api_token>"` in the `.env` file.
 
 ### Discord Message: "Names are already reset, `server_owner` will remain unaffected"
 A limitation of the script is the bot's permissions don't allow it to reset the server owner's nickname. This is the error code when trying to do so.
