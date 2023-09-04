@@ -8,7 +8,6 @@ pip install discord.py python-dotenv
 
 
 ## Setup
-
 1. Clone this repository or download the script.
 2. Set up a `.env` file in the root directory, replacing `YourDiscordBotTokenHere` with your actual bot token from the [Discord Developer Portal](https://discord.com/developers/applications). OAuth2 > General > Generate Client Secret.
 3. Run the script:
@@ -24,14 +23,6 @@ python3 src/reset_names.py
 
 - It will then send a combined message indicating the nickname reset process. The message includes placeholders for showing the "Before (Nickname)" and "After (Default)" which will be implemented later.
 
-## Current Limitations
-
-1. Discord's message character limit is 2000. If there are more than 50 members in a guild, the return message of the bot can cause an error trying to go over the limit.
-2. The bot's permissions don't allow it to reset the server owner's nickname.
-```bash
-(403 Forbidden (error code: 50013): Missing Permissions)
-```
-
 ## TODO
 - Make as a script
 
@@ -43,6 +34,20 @@ nickname -> display_name
 ```
 - Add catch for server owner: Checks if server owner has nickname and states that it is unable to change it.
 - States if all names are already reset: Also adds a note if server owner has a nickname that cannot be changed for visibility.
+
+## Troubleshooting
+### TypeError: expected token to be a str, received NoneType instead
+When trying to run the `reset_names.py` script, you may encounter an error indicating an "TypeError: expected token to be a str, received NoneType instead". This happens due to a missing API token.
+#### Resolution
+Ensure that you have provided the API token to `BOT_TOKEN="<api_token>"` in the .env file.
+
+### Discord Message: "Names are already reset, `server_owner` will remain unaffected"
+A limitation of the script is the bot's permissions don't allow it to reset the server owner's nickname. This is the error code when trying to do so.
+```bash
+(403 Forbidden (error code: 50013): Missing Permissions)
+```
+#### Resolution
+Unfortunately, this error cannot be resolved due to API limitations. My suggestion would be to manually change the owner's nickname to its default state.
 
 
 ## Support
