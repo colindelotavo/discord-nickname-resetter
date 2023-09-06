@@ -45,4 +45,4 @@ If you encounter any issues or if there is any way to make the steps to using th
 ## Useful Links
 - [Python Discord Bot Example](https://realpython.com/how-to-make-a-discord-bot-python/)
 - [Discord.Py API Documentation](https://discordpy.readthedocs.io/en/stable/api.html)
-
+- [Intro to Webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
