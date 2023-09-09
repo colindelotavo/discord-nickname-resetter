@@ -7,14 +7,17 @@ pip install discord.py python-dotenv
 ```
 
 ## Setup
-1. Download the repository onto your computer.
+1. Download this repository onto your computer.
 2. Create a file named `.env` in the main folder of the project.
 3. Copy and paste the code below into the `.env` file.
 ```
 BOT_TOKEN = "<api_token>"
 ```
-4. Replace `<api_token>` with your bot token from the [Discord Developer Portal](https://discord.com/developers/applications). OAuth2 > General > Generate Client Secret.
-5. Run the script:
+4. Login to the [Discord Developer Portal](https://discord.com/developers/applications).
+5. Create a new application (the name does not matter).
+6. Go to OAuth2 > General > Reset/Generate Client Secret.
+7. Replace `<api_token>` with your generated secret.
+8. Run the script:
 ```bash
 python3 src/reset_names.py
 ```
