@@ -17,7 +17,7 @@ BOT_TOKEN = "<api_token>"
 5. Create a new application (the name does not matter).
 6. Go to OAuth2 > General > Reset/Generate Client Secret.
 7. Replace `<api_token>` with your generated secret.
-8. Run the script:
+8. Run the script (while in the repository's directory):
 ```bash
 python3 src/reset_names.py
 ```
